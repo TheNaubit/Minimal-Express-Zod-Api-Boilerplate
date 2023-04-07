@@ -19,8 +19,8 @@ It has the **minimum dependencies** and stuff already implemented since I don't 
  - **➰ Multi-instance, auto-restart and dockerized**: In the Dockerized production build, you won't have to worry about instances, restarts... everything is already configured with PM2.
 
 ## Requeriments
-✅ At least Node.js 16.X.X
-✅ Docker in your system (only if you want to create Docker images)
+- ✅ At least Node.js 16.X.X
+- ✅ Docker in your system (only if you want to create Docker images)
 
 ## How to start?
 

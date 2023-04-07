@@ -6,6 +6,11 @@
   "engines" : { 
     "node" : ">=16.0.0"
   },
+  "homepage": "https://github.com/TheNaubit/minimal-express-zod-api-boilerplate",
+  "bugs": {
+    "url": "https://github.com/TheNaubit/minimal-express-zod-api-boilerplate/issues",
+    "email": "code@nauverse.com"
+  },
   "scripts": {
     "clean": "rimraf ./dist ./src/client/client.ts ./src/docs/api.yaml",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -41,7 +46,15 @@
     "template",
     "zod"
   ],
-  "author": "Al - @naucode",
+  "author": {
+    "name": "Al - @naucode",
+    "email": "code@nauverse.com",
+    "url": "https://nauverse.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheNaubit/minimal-express-zod-api-boilerplate.git"
+  },
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
