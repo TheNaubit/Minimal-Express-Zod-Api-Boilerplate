@@ -1,19 +1,15 @@
-import 'module-alias/register';
-import express, { Express, Request, Response } from 'express';
-import dotenv from 'dotenv';
-import { test } from '@/routes';
+import '@total-typescript/ts-reset';
 
-dotenv.config();
-
-const app: Express = express();
-const port = process.env.PORT;
-
-app.get('/', (_req: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
-});
-
-app.listen(port, () => {
+if (process.env.NODE_ENV === 'production') {
   // eslint-disable-next-line no-console
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
-  test();
-});
+  console.log('🔐 Loading production mode...');
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  import('./index.prod');
+} else {
+  // eslint-disable-next-line no-console
+  console.log('👷 Loading development mode...');
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  import('./index.dev');
+}

@@ -1,5 +1,5 @@
 {
-    "ignore": ["**/*.test.ts", "**/*.spec.ts", ".git", "node_modules"],
+    "ignore": ["**/*.test.ts", "**/*.spec.ts", ".git", "node_modules", "./src/client/**/*", "./src/docs/**/*"],
     "watch": ["src"],
     "exec": "node -r tsconfig-paths/register -r ts-node/register ./src/index.ts",
     "ext": "ts, js"

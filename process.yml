@@ -1,0 +1,5 @@
+apps:
+    - name: express-typescript-boilerplate-api
+      script: ./dist/index.js
+      exec_mode: cluster
+      instances: max

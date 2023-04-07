@@ -6,7 +6,9 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
     "sourceMap": true,
     "outDir": "./dist",
@@ -22,6 +24,10 @@
     "noImplicitAny": true,
     "skipLibCheck": true
   },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules"]
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

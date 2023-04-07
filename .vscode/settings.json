@@ -10,11 +10,12 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.formatOnSave": true,
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "typescript.preferences.importModuleSpecifier": "non-relative"
 }
