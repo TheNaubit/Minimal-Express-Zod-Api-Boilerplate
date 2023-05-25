@@ -1,9 +1,11 @@
 import { z } from 'zod';
 
-export const EnvFile = {
+export const LogLevelSchema = z.enum(['silent', 'warn', 'debug']).default('debug');
+
+export const EnvFileSchema = z.object({
   PORT: z.coerce.number().default(8090),
   CORS_ENABLED: z.coerce.boolean().default(true),
-  LOG_LEVEL: z.union([z.literal('silent'), z.literal('warn'), z.literal('debug')]).default('debug'),
+  LOG_LEVEL: LogLevelSchema,
   LOG_COLORED: z.coerce.boolean().default(true),
   COMPRESSION_ENABLED: z.coerce.boolean().default(true),
   UPLOAD_ENABLED: z.coerce.boolean().default(true),
@@ -12,6 +14,6 @@ export const EnvFile = {
   API_VERSION: z.coerce.string().default('0.0.1'),
   API_TITLE: z.coerce.string().default('minimal-express-zod-api-boilerplate'),
   API_SERVER_URL: z.coerce.string().default('http://api.example.com/v1'),
-};
+});
 
-export const Environment = z.union([z.literal('production'), z.literal('development')]);
+export const Environment = z.enum(['production', 'development']);

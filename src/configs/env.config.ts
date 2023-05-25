@@ -1,4 +1,5 @@
-import { EnvFile } from '@/models';
-import { parseEnv } from 'znv';
+import { EnvFileSchema } from '@/models';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-export const envConfig = parseEnv(process.env, EnvFile);
+export const envConfig = EnvFileSchema.parse(process.env);
