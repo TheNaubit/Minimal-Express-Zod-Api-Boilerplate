@@ -1,10 +1,10 @@
 {
   "name": "minimal-express-zod-api-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "📝 A minimal Express Zod API boilerplate, ready to clone and build!",
   "main": "dist/index.js",
-  "engines" : { 
-    "node" : ">=16.0.0"
+  "engines": {
+    "node": ">=18.0.0"
   },
   "homepage": "https://github.com/TheNaubit/minimal-express-zod-api-boilerplate",
   "bugs": {
@@ -16,12 +16,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run clean && npm run lint && tsc && echo \"✅ Build ready in the /dist folder. Run it with npm run start\"",
     "start": "NODE_ENV=production node .",
-    "dev": "NODE_ENV=development nodemon",
-    "dev:no-reload": "NODE_ENV=development ts-node -r tsconfig-paths/register ./src/index.ts",
+    "dev": "NODE_ENV=development tsx watch ./src/index.ts",
+    "dev:no-reload": "NODE_ENV=development tsx ./src/index.ts",
     "lint": "eslint  --cache \"src/**/*.{js,ts}\"",
     "lint:fix": "eslint  --cache --fix \"src/**/*.{js,ts}\"",
-    "generate:client": "ts-node -r tsconfig-paths/register ./src/scripts/clientGenerator.ts && eslint --fix \"src/client/**/*.{js,ts}\"",
-    "generate:docs": "ts-node -r tsconfig-paths/register ./src/scripts/docsGenerator.ts",
+    "generate:client": "NODE_ENV=development tsx ./src/scripts/clientGenerator.ts",
+    "generate:docs": "NODE_ENV=development tsx ./src/scripts/docsGenerator.ts",
     "docker:build": "docker build -t naucode/minimal-express-zod-api-boilerplate:latest .",
     "docker:run": "docker run -e NODE_ENV=production naucode/minimal-express-zod-api-boilerplate",
     "docker:build:dev": "docker build --target builder -t naucode/minimal-express-zod-api-boilerplate:dev .",
@@ -57,12 +57,12 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@total-typescript/ts-reset": "^0.4.2",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-zod-api": "^10.1.2",
     "module-alias": "^2.2.2",
-    "znv": "^0.3.2",
-    "zod": "^3.21.4",
-    "@total-typescript/ts-reset": "^0.4.2"
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.2",
@@ -76,11 +76,11 @@
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
-    "nodemon": "^2.0.22",
     "prettier": "^2.8.7",
     "rimraf": "^4.4.1",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
+    "tsx": "^3.12.7",
     "typescript": "^5.0.3"
   }
 }

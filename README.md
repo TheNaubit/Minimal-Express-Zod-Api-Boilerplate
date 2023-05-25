@@ -19,7 +19,7 @@ It has the **minimum dependencies** and stuff already implemented since I don't 
  - **➰ Multi-instance, auto-restart and dockerized**: In the Dockerized production build, you won't have to worry about instances, restarts... everything is already configured with PM2.
 
 ## Requeriments
-- ✅ At least Node.js 16.X.X
+- ✅ At least Node.js 18.X.X
 - ✅ Docker in your system (only if you want to create Docker images)
 
 ## How to start?
@@ -40,7 +40,7 @@ Once you have the .env file ready, it is time to rename the project.
 ## How to rename the project?
 I have tried to reduce the changes you have to do by a lot but still you have to change some files.
 First, in the `package.json` file, change the name of the project in the **line 2**.
-In the **same file**, in the **lines 20, 21, 22 and 23**; change the project name from **naucode/express-typescript-boilerplate-api** to your project name.
+In the **same file**, in the **lines 25, 26, 27 and 28**; change the project name from **naucode/express-typescript-boilerplate-api** to your project name.
 In the `.env` file, make sure to change the **API_TITLE** to your project name.
 Finally, in the **line 13** in the file `./src/models/app.ts`, change the text from '**express-typescript-boilerplate-api**' to your project name.
 To finish, **reinstall the dependencies** (for example with `npm i`) and you will have finished!
@@ -109,4 +109,7 @@ Finally, as always, I recommend you to check the docs of the dependencies, that 
 - [Express Zod API Docs](https://github.com/RobinTail/express-zod-api)
 - [Zod Docs](https://zod.dev/)
 - [TS Reset Docs](https://github.com/total-typescript/ts-reset)
-- [ZNV Docs](https://github.com/lostfictions/znv)
+
+## Changelog
+- **1.0.1**: Moved support to Node 18, moved from Nodemon to TSX, fixed .env file load, fixed several typos
+- **1.0.0**: Initial version

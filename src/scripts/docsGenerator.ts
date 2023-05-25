@@ -4,7 +4,7 @@ import { OpenAPI } from 'express-zod-api';
 import { routing } from '@/routes';
 import { zodConfig as config, envConfig } from '@/configs';
 
-console.log('✍️ Generating client...');
+console.log('✍️  Generating docs...');
 // Check this for docs: https://github.com/RobinTail/express-zod-api/tree/master#creating-a-documentation
 fs.writeFileSync(
   './src/docs/api.yaml',
